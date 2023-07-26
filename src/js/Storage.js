@@ -1,50 +1,52 @@
+/*=============$ Products $=============*/
 const products = [
   {
     id: 1,
-    title: "React.JS",
-    category: "Frontend",
-    createdAt: "2023-03-30T12:28:00.411Z",
+    title: 'React.JS',
+    category: 'Frontend',
+    createdAt: '2023-03-30T12:28:00.411Z',
   },
+
   {
     id: 2,
-    title: "Node.JS",
-    category: "Backend",
-    createdAt: "2023-03-30T12:30:00.556Z",
+    title: 'Node.JS',
+    category: 'Backend',
+    createdAt: '2023-03-30T12:30:00.556Z',
   },
+
   {
     id: 3,
-    title: "Vue.JS",
-    category: "Frontend",
-    createdAt: "2023-03-30T12:32:00.889Z",
+    title: 'Vue.JS',
+    category: 'Frontend',
+    createdAt: '2023-03-30T12:32:00.889Z',
   },
 ];
 
+/*=============$ Categories $=============*/
 const categories = [
   {
     id: 1,
-    title: "Frontend",
-    description: "Frontend of Applications",
-    createdAt: "2023-03-30T12:32:00.889Z",
+    title: 'Frontend',
+    description: 'Frontend of Applications',
+    createdAt: '2023-03-30T12:32:00.889Z',
   },
+
   {
     id: 2,
-    title: "Backend",
-    description: "The Backend of Applications",
-    createdAt: "2023-02-30T12:32:00.889Z",
+    title: 'Backend',
+    description: 'The Backend of Applications',
+    createdAt: '2023-02-30T12:32:00.889Z',
   },
 ];
-
+ 
 export default class Storage {
-  // add new category
-  // save category
-  // getAllCategories
-
+  //======> Get All Categories <=======
   static getAllCategories() {
     /* products, category => where/save -> localStorage browser -> how to get them: 
        the data are stored as 'strings', so they must be converted into understandable data
        with the help of: 
     */
-    const savedCategories = JSON.parse(localStorage.getItem("category")) || [];
+    const savedCategories = JSON.parse(localStorage.getItem('category')) || [];
 
     // descending sort -> sort based on the latest data
     const sortedCategories = savedCategories.sort((a, b) => {
@@ -54,6 +56,7 @@ export default class Storage {
     return sortedCategories;
   }
 
+  //=======> Save categories <=========
   static saveCategories(categoryToSave) {
     const savedCategories = Storage.getAllCategories();
     // category edit -> ... then save
@@ -73,23 +76,24 @@ export default class Storage {
       savedCategories.push(categoryToSave);
     }
 
-    localStorage.setItem("category", JSON.stringify(savedCategories));
+    localStorage.setItem('category', JSON.stringify(savedCategories));
     // -> category is an array so we need to converted to string
   }
 
-  // products method are as same as categories method
-  static getAllProducts(sort = "newest") {
-    const savedProducts = JSON.parse(localStorage.getItem("products")) || [];
+  //=======> Get All Products <========
+  static getAllProducts(sort = 'newest') {
+    const savedProducts = JSON.parse(localStorage.getItem('products')) || [];
 
     return savedProducts.sort((a, b) => {
-      if (sort === "newest") {
+      if (sort === 'newest') {
         return new Date(a.createdAt) > new Date(b.createdAt) ? -1 : 1;
-      } else if (sort === "oldest") {
+      } else if (sort === 'oldest') {
         return new Date(a.createdAt) > new Date(b.createdAt) ? 1 : -1;
       }
     });
   }
 
+  //=======> Save Products <==========
   static saveProducts(productToSave) {
     const savedProducts = Storage.getAllProducts();
 
@@ -107,13 +111,14 @@ export default class Storage {
       savedProducts.push(productToSave);
     }
 
-    localStorage.setItem("products", JSON.stringify(savedProducts));
+    localStorage.setItem('products', JSON.stringify(savedProducts));
   }
 
+  //=======> Delete Products <=========
   static deleteProduct(id) {
     const savedProducts = Storage.getAllProducts();
     const filteredProducts = savedProducts.filter((p) => p.id !== parseInt(id));
 
-    localStorage.setItem("products", JSON.stringify(filteredProducts));
+    localStorage.setItem('products', JSON.stringify(filteredProducts));
   }
 }

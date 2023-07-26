@@ -1,3 +1,4 @@
+/*==========$ import Categories & Products $========*/
 import CategoryView from "./CategoryView.js";
 import ProductView from "./ProductView.js";
 

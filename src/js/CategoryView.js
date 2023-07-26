@@ -1,3 +1,4 @@
+/*==============$ import Storage $==============*/
 import Storage from "./Storage.js";
 
 // get title, description -> they're inside {} -> pass to saveCategory -> ...

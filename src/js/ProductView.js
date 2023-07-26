@@ -1,3 +1,4 @@
+/*==============$ import Storage $==============*/
 import Storage from "./Storage.js";
 
 const addNewProductBtn = document.getElementById("add-new-product");
