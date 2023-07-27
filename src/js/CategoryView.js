@@ -49,8 +49,8 @@ class CategoryView {
     toggleCategory.classList.remove('hidden');
   }
 
-  //============> Set App <============= 
-  setCategory() {
+  //============> Set Categories <============= 
+  setApp() {
     //-> in the initial load, put the categories we have in the App and categoryView
     this.categories = Storage.getAllCategories();
   }

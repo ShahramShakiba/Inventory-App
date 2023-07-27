@@ -3,12 +3,13 @@ import CategoryView from './CategoryView.js';
 import ProductView from './ProductView.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  //-> setApp: call categories we made
-  CategoryView.setCategory();
+  //-> setApp: call categories and products we made
+  CategoryView.setApp();
 
-  //-> Create categories options 
-  CategoryView.createCategoriesList(CategoryView.categories);
+  ProductView.setApp();
 
-  ProductView.setCategory(ProductView);
-  ProductView.createProductsList(ProductView.products);
+  //-> Add created categories and products options
+  CategoryView.createCategoriesList();
+
+  ProductView.createProductsList();
 });
