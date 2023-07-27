@@ -58,7 +58,7 @@ class ProductView {
       const selectedCategory = Storage.getAllCategories().find(
         (c) => c.id === parseInt(item.category)
       );
-
+      console.log(products);
       result += `
       <div class="flex items-center justify-between mb-8">
         <span class="text-slate-400">
@@ -104,9 +104,10 @@ class ProductView {
     });
   }
 
-  //============>  <=============
+  //============> Search Products <=============
   searchProduct(e) {
     const value = e.target.value.trim().toLowerCase();
+    
     const filteredProducts = this.products.filter((p) =>
       p.title.toLowerCase().includes(value)
     );
@@ -114,14 +115,14 @@ class ProductView {
     this.createProductsList(filteredProducts);
   }
 
-  //============>  <=============
+  //============> Sort Products <=============
   sortProducts(e) {
     const value = e.target.value;
     this.products = Storage.getAllProducts(value);
     this.createProductsList(this.products);
   }
 
-  //============>  <=============
+  //============> Delete Products <=============
   deleteProduct(e) {
     const productId = e.target.dataset.productId;
     Storage.deleteProduct(productId);
