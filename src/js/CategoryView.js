@@ -1,48 +1,56 @@
 /*==============$ import Storage $==============*/
-import Storage from "./Storage.js";
+import Storage from './Storage.js';
 
-// get title, description -> they're inside {} -> pass to saveCategory -> ...
-const categoryTitle = document.querySelector("#category-title");
-const categoryDescription = document.querySelector("#category-description");
-const addNewCategoryBtn = document.querySelector("#add-new-category");
-const toggleAddCategoryBtn = document.getElementById("toggle-add-category");
-const categoryWrapper = document.querySelector("#category-wrapper");
-const cancelAddCategory = document.querySelector("#cancel-add-category");
+//-> get title, description -> {} -> saveCategory -> ...
+const cTitle = document.querySelector('#category-title'),
+  cDescription = document.querySelector('#category-description'),
+  addCategory = document.querySelector('#add-new-category'),
+  cancelCategory = document.querySelector('#cancel-add-category');
 
-class CategoryView {
+const toggleCategory = document.getElementById('toggle-add-category'),
+  categoryWrapper = document.querySelector('#category-wrapper');
+
+export default class CategoryView {
   constructor() {
-    addNewCategoryBtn.addEventListener("click", (e) => this.addNewCategory(e));
-    toggleAddCategoryBtn.addEventListener("click", (e) =>
+    //->add an event to "Add New Category"
+    addCategory.addEventListener('click', (e) => this.addNewCategory(e));
+
+    toggleCategory.addEventListener('click', (e) =>
       this.toggleAddCategory(e)
     );
-    cancelAddCategory.addEventListener("click", (e) =>
+    cancelCategory.addEventListener('click', (e) =>
       this.cancelAddCategory(e)
     );
-    // default -> [] an empty array / but when updated we got that new value from addNewCategory()
+
+    //-> default = [] / but when updated we got that new value from addNewCategory()
     this.categories = [];
   }
 
+  //===========> Add New Category <===========
   addNewCategory(e) {
     e.preventDefault();
-    const title = categoryTitle.value;
-    const description = categoryDescription.value;
 
+    const title = cTitle.value;
+    const description = cDescription.value;
+
+    //-> Stop if title and desc was empty 
     if (!title || !description) return;
 
-    // save new category
-    Storage.saveCategories({ title, description }); // 3category -> 4
-    // display new added category -> need this new value in constructor()
+    //-> Save newCategory  3 => 4
+    Storage.saveCategories({ title, description }); 
+
+    //-> To display new added category and then call it on "constructor"
     this.categories = Storage.getAllCategories();
 
-    // update DOM : update select option in categories
+    //=> Update DOM: update "Category" option on product section
     this.createCategoriesList();
 
     /* empty the title and description of category section after adding new category
        so that nothing can be seen inside them */
-    categoryTitle.value = "";
-    categoryDescription.value = "";
-    categoryWrapper.classList.add("hidden");
-    toggleAddCategoryBtn.classList.remove("hidden");
+    cTitle.value = '';
+    cDescription.value = '';
+    categoryWrapper.classList.add('hidden');
+    toggleCategory.classList.remove('hidden');
   }
 
   // in the initial load, put the categories we have in the app and categoryView
@@ -69,23 +77,19 @@ class CategoryView {
         `;
     });
 
-    const categoryDOM = document.getElementById("product-category");
+    const categoryDOM = document.getElementById('product-category');
     categoryDOM.innerHTML = result;
   }
 
   toggleAddCategory(e) {
     e.preventDefault();
-    categoryWrapper.classList.remove("hidden");
-    toggleAddCategoryBtn.classList.add("hidden");
+    categoryWrapper.classList.remove('hidden');
+    toggleCategory.classList.add('hidden');
   }
 
   cancelAddCategory(e) {
     e.preventDefault();
-    categoryWrapper.classList.add("hidden");
-    toggleAddCategoryBtn.classList.remove("hidden");
+    categoryWrapper.classList.add('hidden');
+    toggleCategory.classList.remove('hidden');
   }
 }
-
-/* create new instance of category 
-   in order not to 'new CategoryView' in other files every time, export it as follows */
-export default new CategoryView();

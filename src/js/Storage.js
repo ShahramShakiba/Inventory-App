@@ -27,94 +27,94 @@ const categories = [
   {
     id: 1,
     title: 'Frontend',
-    description: 'Frontend of Applications',
+    description: 'The Frontend of Application',
     createdAt: '2023-03-30T12:32:00.889Z',
   },
 
   {
     id: 2,
     title: 'Backend',
-    description: 'The Backend of Applications',
+    description: 'The Backend of Application',
     createdAt: '2023-02-30T12:32:00.889Z',
   },
 ];
- 
+
 export default class Storage {
-  //======> Get All Categories <=======
+  //products, category => save or get -> localStorage browser
+
+  //========> Get All Categories <=========
   static getAllCategories() {
-    /* products, category => where/save -> localStorage browser -> how to get them: 
-       the data are stored as 'strings', so they must be converted into understandable data
-       with the help of: 
-    */
     const savedCategories = JSON.parse(localStorage.getItem('category')) || [];
 
-    // descending sort -> sort based on the latest data
+    //-> descending sort: sort based on the latest data
     const sortedCategories = savedCategories.sort((a, b) => {
-      // converted into understandable Date :
       return new Date(a.createdAt) > new Date(b.createdAt) ? -1 : 1;
     });
+
     return sortedCategories;
   }
 
-  //=======> Save categories <=========
-  static saveCategories(categoryToSave) {
+  //=========> Save categories <===========
+  static saveCategories(category) {
+    //-> get all categories
     const savedCategories = Storage.getAllCategories();
-    // category edit -> ... then save
-    // category new -> ... then save
-    const existedItem = savedCategories.find((c) => c.id === categoryToSave.id);
+
+    const existedItem = savedCategories.find((c) => c.id === category.id);
+
     if (existedItem) {
-      // edit
-      existedItem.title = categoryToSave.title;
-      existedItem.description = categoryToSave.description;
+      //-> edit category: ... then save
+      existedItem.title = category.title;
+      existedItem.description = category.description;
     } else {
-      // new
-      //                 new Date().getTime() -> it's a time stamp
-      categoryToSave.id = new Date().getTime();
-      categoryToSave.createdAt = new Date().toISOString();
-      //                        new Date().toISOString() -> date in th backend stored in this way
-      // add another object
-      savedCategories.push(categoryToSave);
+      //-> new category: ... then save
+      category.id = new Date().getTime();
+      category.createdAt = new Date().toISOString();
+    
+      //update categories 
+      savedCategories.push(category);
     }
 
     localStorage.setItem('category', JSON.stringify(savedCategories));
-    // -> category is an array so we need to converted to string
   }
 
-  //=======> Get All Products <========
+  //=========> Get All Products <==========
   static getAllProducts(sort = 'newest') {
     const savedProducts = JSON.parse(localStorage.getItem('products')) || [];
 
     return savedProducts.sort((a, b) => {
       if (sort === 'newest') {
+        //-> descending sort
         return new Date(a.createdAt) > new Date(b.createdAt) ? -1 : 1;
       } else if (sort === 'oldest') {
+        //-> ascending sort 
         return new Date(a.createdAt) > new Date(b.createdAt) ? 1 : -1;
       }
     });
   }
 
-  //=======> Save Products <==========
-  static saveProducts(productToSave) {
+  //=========> Save Products <=============
+  static saveProducts(product) {
     const savedProducts = Storage.getAllProducts();
 
-    const existedItem = savedProducts.find((c) => c.id === productToSave.id);
+    const existedItem = savedProducts.find((c) => c.id === product.id);
     if (existedItem) {
-      // edit
-      existedItem.title = productToSave.title;
-      existedItem.quantity = productToSave.quantity;
-      existedItem.category = productToSave.category;
+      //-> edit products
+      existedItem.title = product.title;
+      existedItem.quantity = product.quantity;
+      existedItem.category = product.category;
     } else {
-      // new
-      productToSave.id = new Date().getTime();
-      productToSave.createdAt = new Date().toISOString();
+      //-> new products
+      product.id = new Date().getTime();
+      product.createdAt = new Date().toISOString();
 
-      savedProducts.push(productToSave);
+      //update products 
+      savedProducts.push(product);
     }
 
     localStorage.setItem('products', JSON.stringify(savedProducts));
   }
 
-  //=======> Delete Products <=========
+  //=========> Delete Products <===========
   static deleteProduct(id) {
     const savedProducts = Storage.getAllProducts();
     const filteredProducts = savedProducts.filter((p) => p.id !== parseInt(id));
