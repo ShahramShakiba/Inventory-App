@@ -71,8 +71,8 @@ class ProductView {
       );
 
       result += `
-      <div class="flex items-center justify-between mb-8">
-        <span class="text-slate-400">
+      <div class="products-details flex items-center justify-between mb-8">
+        <span class="added-product text-slate-400 px-4">
           ${item.title}
         </span>
 
@@ -95,9 +95,14 @@ class ProductView {
           </span>
 
           <button
+              class="edit-product border px-2 py-0.5 rounded-2xl
+              border-slate-400 text-slate-400" data-id=${item.id}>
+              <i class="ri-edit-line"></i>
+          </button>
+          <button
               class="delete-product border px-2 py-0.5 rounded-2xl
               border-red-400 text-red-400" data-id=${item.id}>
-            Delete
+              <i class="ri-delete-bin-line"></i>
           </button>
         </div>
       </div>
@@ -109,9 +114,14 @@ class ProductView {
 
     //-> deleteBtns = Node-list => convert to an array with "spread op"
     const deleteBtns = [...document.querySelectorAll('.delete-product')];
+    const editBtns = [...document.querySelectorAll('.edit-product')];
 
     deleteBtns.forEach((item) => {
       item.addEventListener('click', (e) => this.deleteProduct(e));
+    });
+
+    editBtns.forEach((item) => {
+      item.addEventListener('click', (e) => this.editProduct(e));
     });
   }
 
@@ -150,6 +160,39 @@ class ProductView {
 
     //-> Update product number
     this.updateProductNumber();
+  }
+
+  editProduct(e) {
+    const productId = e.target.dataset.id;
+
+    const input = e.target
+      .closest('.products-details')
+      .querySelector('.added-product');
+
+    input.contentEditable = true;
+    input.focus();
+    const initialValue = input.innerText;
+
+    input.addEventListener('blur', () => {
+      input.contentEditable = false;
+
+      const updatedValue = input.innerText.trim();
+
+      if (updatedValue === initialValue) return;
+
+      const productToUpdate = this.products.find(
+        (product) => product.id === productId
+      );
+
+      productToUpdate.title = updatedValue;
+
+      Storage.saveProducts(productToUpdate);
+
+      this.createProductsList(this.products);
+
+      //-> Update product number
+      this.updateProductNumber();
+    });
   }
 
   //=======> Update the number of Products <========
