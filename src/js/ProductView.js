@@ -196,13 +196,11 @@ class ProductView {
   }
 
   //=======> Update the number of Products <========
-  updateProductNumber() {
-    // Storage.getAllProducts();
-    // e.preventDefault();
+  updateProductNumber(e) {
+    this.products = Storage.getAllProducts();
+    
     const count = this.products.length;
     numOfProducts.textContent = count;
-
-    // Storage.saveProducts(this.product);
   }
 }
 
