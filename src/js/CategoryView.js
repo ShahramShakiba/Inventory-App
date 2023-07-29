@@ -5,9 +5,9 @@ import Storage from './Storage.js';
 const cTitle = document.querySelector('#category-title'),
   cDescription = document.querySelector('#category-description'),
   addCategory = document.querySelector('#add-new-category'),
-  cancelCategory = document.querySelector('#cancel-add-category');
+  cancelCategoryBtn = document.querySelector('#cancel-add-category');
 
-const toggleCategory = document.getElementById('toggle-add-category'),
+const toggleCategoryBtn = document.getElementById('toggle-add-category'),
   categoryWrapper = document.querySelector('#category-wrapper');
 
 class CategoryView {
@@ -15,8 +15,9 @@ class CategoryView {
     //->add an event to "Add New Category"
     addCategory.addEventListener('click', (e) => this.addNewCategory(e));
 
-    toggleCategory.addEventListener('click', (e) => this.toggleAddCategory(e));
-    cancelCategory.addEventListener('click', (e) => this.cancelAddCategory(e));
+    toggleCategoryBtn.addEventListener('click', (e) => this.toggleCategory(e));
+
+    cancelCategoryBtn.addEventListener('click', (e) => this.cancelCategory(e));
 
     //-> default = [] / but when updated we got that new value from addNewCategory()
     this.categories = [];
@@ -45,8 +46,9 @@ class CategoryView {
     cTitle.value = '';
     cDescription.value = '';
 
+    //-> Add toggle event 
     categoryWrapper.classList.add('hidden');
-    toggleCategory.classList.remove('hidden');
+    toggleCategoryBtn.classList.remove('hidden');
   }
 
   //============> Set Categories <============= 
@@ -77,19 +79,21 @@ class CategoryView {
     categoryDOM.innerHTML = result;
   }
 
-  //============>  <============= 
-  toggleAddCategory(e) {
+  //============> Toggle Category <============= 
+  toggleCategory(e) {
     e.preventDefault();
+
     categoryWrapper.classList.remove('hidden');
-    toggleCategory.classList.add('hidden');
+    toggleCategoryBtn.classList.add('hidden');
   }
 
 
-  //============>  <============= 
-  cancelAddCategory(e) {
+  //============> Cancel Category <============= 
+  cancelCategory(e) {
     e.preventDefault();
+
     categoryWrapper.classList.add('hidden');
-    toggleCategory.classList.remove('hidden');
+    toggleCategoryBtn.classList.remove('hidden');
   }
 }
 

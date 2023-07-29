@@ -1,43 +1,43 @@
 /*=============$ Products $=============*/
-const products = [
-  {
-    id: 1,
-    title: 'React.JS',
-    category: 'Frontend',
-    createdAt: '2023-03-30T12:28:00.411Z',
-  },
+// const products = [
+//   {
+//     id: 1,
+//     title: 'React.JS',
+//     category: 'Frontend',
+//     createdAt: '2023-03-30T12:28:00.411Z',
+//   },
 
-  {
-    id: 2,
-    title: 'Node.JS',
-    category: 'Backend',
-    createdAt: '2023-03-30T12:30:00.556Z',
-  },
+//   {
+//     id: 2,
+//     title: 'Node.JS',
+//     category: 'Backend',
+//     createdAt: '2023-03-30T12:30:00.556Z',
+//   },
 
-  {
-    id: 3,
-    title: 'Vue.JS',
-    category: 'Frontend',
-    createdAt: '2023-03-30T12:32:00.889Z',
-  },
-];
+//   {
+//     id: 3,
+//     title: 'Vue.JS',
+//     category: 'Frontend',
+//     createdAt: '2023-03-30T12:32:00.889Z',
+//   },
+// ];
 
 /*=============$ Categories $=============*/
-const categories = [
-  {
-    id: 1,
-    title: 'Frontend',
-    description: 'The Frontend of Application',
-    createdAt: '2023-03-30T12:32:00.889Z',
-  },
+// const categories = [
+//   {
+//     id: 1,
+//     title: 'Frontend',
+//     description: 'The Frontend of Application',
+//     createdAt: '2023-03-30T12:32:00.889Z',
+//   },
 
-  {
-    id: 2,
-    title: 'Backend',
-    description: 'The Backend of Application',
-    createdAt: '2023-02-30T12:32:00.889Z',
-  },
-];
+//   {
+//     id: 2,
+//     title: 'Backend',
+//     description: 'The Backend of Application',
+//     createdAt: '2023-02-30T12:32:00.889Z',
+//   },
+// ];
 
 export default class Storage {
   //products, category => save or get -> localStorage browser
@@ -54,7 +54,7 @@ export default class Storage {
     return sortedCategories;
   }
 
-  //=========> Save categories <===========
+  //==========> Save categories <===========
   static saveCategories(category) {
     //-> get all categories
     const savedCategories = Storage.getAllCategories();
@@ -77,7 +77,7 @@ export default class Storage {
     localStorage.setItem('category', JSON.stringify(savedCategories));
   }
 
-  //=========> Get All Products <==========
+  //==========> Get All Products <==========
   static getAllProducts(sort = 'newest') {
     const savedProducts = JSON.parse(localStorage.getItem('products')) || [];
 
@@ -92,7 +92,7 @@ export default class Storage {
     });
   }
 
-  //=========> Save Products <=============
+  //==========> Save Products <=============
   static saveProducts(product) {
     const savedProducts = Storage.getAllProducts();
 
@@ -114,9 +114,11 @@ export default class Storage {
     localStorage.setItem('products', JSON.stringify(savedProducts));
   }
 
-  //=========> Delete Products <===========
+  //==========> Delete Products <===========
   static deleteProduct(id) {
+    //-> Get all products 
     const savedProducts = Storage.getAllProducts();
+
     const filteredProducts = savedProducts.filter((p) => p.id !== parseInt(id));
 
     localStorage.setItem('products', JSON.stringify(filteredProducts));

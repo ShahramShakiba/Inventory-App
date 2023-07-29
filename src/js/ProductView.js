@@ -1,18 +1,26 @@
 /*==============$ import Storage $==============*/
 import Storage from './Storage.js';
 
+const numOfProducts = document.querySelector('#product-number');
+
 const addNewProduct = document.getElementById('add-new-product');
 
 const searchInput = document.querySelector('#search-input'),
-  selectedSort = document.querySelector('#sort-products');
+  sortInput = document.querySelector('#sort-products');
 
 class ProductView {
   constructor() {
+    numOfProducts.addEventListener('change', (e) =>
+      this.updateProductNumber(e)
+    );
+
     addNewProduct.addEventListener('click', (e) => this.addNewProduct(e));
     searchInput.addEventListener('input', (e) => this.searchProduct(e));
-    selectedSort.addEventListener('change', (e) => this.sortProducts(e));
+    sortInput.addEventListener('change', (e) => this.sortProducts(e));
 
     this.products = [];
+
+    this.updateProductNumber();
   }
 
   //============> Set Products <=============
@@ -39,6 +47,9 @@ class ProductView {
 
     //-> Add new products
     this.createProductsList(this.products);
+
+    //-> Update product number
+    this.updateProductNumber();
   }
 
   //============> Create Products <=============
@@ -58,7 +69,7 @@ class ProductView {
       const selectedCategory = Storage.getAllCategories().find(
         (c) => c.id === parseInt(item.category)
       );
-      console.log(products);
+
       result += `
       <div class="flex items-center justify-between mb-8">
         <span class="text-slate-400">
@@ -85,7 +96,7 @@ class ProductView {
 
           <button
               class="delete-product border px-2 py-0.5 rounded-2xl
-              border-red-400 text-red-400" data-product-id=${item.id}>
+              border-red-400 text-red-400" data-id=${item.id}>
             Delete
           </button>
         </div>
@@ -107,7 +118,7 @@ class ProductView {
   //============> Search Products <=============
   searchProduct(e) {
     const value = e.target.value.trim().toLowerCase();
-    
+
     const filteredProducts = this.products.filter((p) =>
       p.title.toLowerCase().includes(value)
     );
@@ -118,16 +129,37 @@ class ProductView {
   //============> Sort Products <=============
   sortProducts(e) {
     const value = e.target.value;
+
     this.products = Storage.getAllProducts(value);
+
+    //-> update DOM
     this.createProductsList(this.products);
   }
 
   //============> Delete Products <=============
   deleteProduct(e) {
-    const productId = e.target.dataset.productId;
+    const productId = e.target.dataset.id;
+
+    //-> Delete product
     Storage.deleteProduct(productId);
+
+    //-> Get remained products
     this.products = Storage.getAllProducts();
+
     this.createProductsList(this.products);
+
+    //-> Update product number
+    this.updateProductNumber();
+  }
+
+  //=======> Update the number of Products <========
+  updateProductNumber() {
+    // Storage.getAllProducts();
+    // e.preventDefault();
+    const count = this.products.length;
+    numOfProducts.textContent = count;
+
+    // Storage.saveProducts(this.product);
   }
 }
 
