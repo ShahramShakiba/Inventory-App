@@ -1,6 +1,7 @@
 # Description
 **_Inventory_** :<br/>
   > This is a mini-project to create an inventory-app based on the concept of `OOP` to practice _HTML_, _CSS_, _JavaScript_ and _Tailwindcss_.  <br/>
+  
   > In this project, the focus is on categorizing existing products and adding, deleting and editing those products. <br/>
   
  > Using if else statement - template literals - forEach - filter - find - spread operator - ternary operator - Classes - static method - DOM eventTarget - localStorage .
