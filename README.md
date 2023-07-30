@@ -1,10 +1,10 @@
 # Description
-**_Note-App_** :<br/>
-  > This is a mini-project of building a Note-app to practice `HTML`, `CSS` and `JavaScript` using if else statement - while - template literals - forEach - filter - reduce - find - spread operator - Classes - static method - DOM eventTarget - localStorage .  <br/>
+**_Inventory_** :<br/>
+  > This is a mini-project of building a inventory to practice `HTML`, `CSS` and `JavaScript` using if else statement - while - template literals - forEach - filter - reduce - find - spread operator - Classes - static method - DOM eventTarget - localStorage .  <br/>
 
   > In this project, the focus is on the _product page_ and adding or removing items from the shopping cart. <br/>
 
-- A _bed shop_ is a store that specializes in selling beds and related products. <br/>
+- A _inventory_ is a software application designed to help businesses or individuals manage their inventory of products or goods. <br/>
 
 - **`Some reasons why someone should build a website for their store :`**<br/>
 **_1. Increased online visibility_ :**<br/>
