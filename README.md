@@ -6,15 +6,15 @@
 
 - A _inventory_ is a software application designed to help businesses or individuals manage their inventory of products or goods. <br/>
 
-- **`Some reasons why someone should build a website for their store :`**<br/>
-**_1. Increased online visibility_ :**<br/>
-A website allows you to establish a presence online, making it easier for potential customers to find your store. With a website, you can reach a much larger audience than what is possible through just a physical store.<br/><br/>
-**_2. 24/7 accessibility_ :**<br/>
-Unlike a physical store, a website allows customers to browse and purchase products at any time of the day, regardless of your store's operating hours. This can lead to increased sales and customer satisfaction.<br/><br/>
-**_3. Competitive advantage_ :**<br/>
-Having a website can give your store a competitive edge over competitors who may not have an online presence. <br/><br/>
-**_4. Online sales and convenience_ :**<br/>
-If you offer online shopping and delivery options, a website enables you to expand your customer base beyond your local area. 
+- **`Some benifits of using an inventory-app :`**<br/>
+**_1. Improved accuracy_ :**<br/>
+An inventory app can help reduce human errors in data entry and tracking, leading to more accurate inventory records.<br/><br/>
+**_2. Cost savings_ :**<br/>
+By having a better understanding of their inventory levels, businesses can avoid overstocking or understocking, which can lead to cost savings.<br/><br/>
+**_3. Improved customer satisfaction_ :**<br/>
+By having accurate inventory records, businesses can ensure that they have the products their customers want in stock, leading to higher customer satisfaction. <br/><br/>
+**_4. Scalability_ :**<br/>
+As businesses grow, inventory apps can help them manage their inventory more efficiently and effectively, allowing them to scale their operations.
 
 ### Video
 
