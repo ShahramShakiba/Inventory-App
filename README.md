@@ -1,8 +1,11 @@
 # Description
 **_Inventory_** :<br/>
-  > This is a mini-project of building a inventory to practice `HTML`, `CSS` and `JavaScript` using if else statement - while - template literals - forEach - filter - reduce - find - spread operator - Classes - static method - DOM eventTarget - localStorage .  <br/>
+  > This is a mini-project to create an inventory-app based on the concept of `OOP` to practice _HTML_, _CSS_, _JavaScript_ and _Tailwindcss_.  <br/>
+  > In this project, the focus is on categorizing existing products and adding, deleting and editing those products. <br/>
+  
+ > Using if else statement - template literals - forEach - filter - find - spread operator - ternary operator - Classes - static method - DOM eventTarget - localStorage .
 
-  > In this project, the focus is on the _product page_ and adding or removing items from the shopping cart. <br/>
+ 
 
 - A _inventory_ is a software application designed to help businesses or individuals manage their inventory of products or goods. <br/>
 
