@@ -39,6 +39,11 @@ class ProductView {
     //-> Stop if title, category and quantity was empty
     if (!title || !category || !quantity) return;
 
+    //-> Clear input fields 
+    document.querySelector('#product-title').value = '';
+    document.querySelector('#product-quantity').value = '';
+    document.querySelector('#product-category').value = '';
+
     //-> Save newProduct
     Storage.saveProducts({ title, category, quantity });
 
@@ -72,10 +77,11 @@ class ProductView {
         (c) => c.id === parseInt(item.category)
       );
 
+      /* optional chaining operator (?.): add a check to verify if the 'item' object exists and if the 'title' property is defined before accessing it. */
       result += `
       <div class="products-details flex items-center justify-between mb-8">
         <span class="added-product text-slate-400 px-4">
-          ${item.title}
+          ${item?.title}
         </span>
 
         <div class="flex items-center gap-x-3">
@@ -86,24 +92,24 @@ class ProductView {
           <span
               class="block px-3 py-0.5 text-slate-400 border
               border-slate-400 text-sm rounded-2xl">
-            ${selectedCategory.title}
+            ${selectedCategory?.title}
           </span>
 
           <span
               class="flex items-center justify-center w-7 h-7 
               rounded-full bg-slate-500 text-slate-300 border-2
               border-slate-300">
-            ${item.quantity}
+            ${item?.quantity}
           </span>
 
           <button
               class="edit-product border px-2 py-0.5 rounded-2xl
-              border-slate-400 text-slate-400" data-id=${item.id}>
+              border-slate-400 text-slate-400" data-id=${item?.id}>
               <i class="ri-edit-line"></i>
           </button>
           <button
               class="delete-product border px-2 py-0.5 rounded-2xl
-              border-red-400 text-red-400" data-id=${item.id}
+              border-red-400 text-red-400" data-id=${item?.id}
               >
               
               <span class="delete-icon">
