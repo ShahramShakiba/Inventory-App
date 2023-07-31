@@ -64,6 +64,8 @@ class ProductView {
       day: 'numeric',
     };
 
+    products.innerHTML = '';
+
     products.forEach((item) => {
       //-> find selected category by its id
       const selectedCategory = Storage.getAllCategories().find(
@@ -101,8 +103,12 @@ class ProductView {
           </button>
           <button
               class="delete-product border px-2 py-0.5 rounded-2xl
-              border-red-400 text-red-400" data-id=${item.id}>
-              <i class="ri-delete-bin-line"></i>
+              border-red-400 text-red-400" data-id=${item.id}
+              >
+              
+              <span class="delete-icon">
+                <i class="ri-delete-bin-line"></i>
+              </span>
           </button>
         </div>
       </div>
@@ -114,10 +120,12 @@ class ProductView {
 
     //-> deleteBtns = Node-list => convert to an array with "spread op"
     const deleteBtns = [...document.querySelectorAll('.delete-product')];
+
     const editBtns = [...document.querySelectorAll('.edit-product')];
 
-    deleteBtns.forEach((item) => {
-      item.addEventListener('click', (e) => this.deleteProduct(e));
+    deleteBtns.forEach((btn) => {
+      //adds a click event listener to the current button.
+      btn.addEventListener('click', (e) => this.deleteProduct(e, btn));
     });
 
     editBtns.forEach((item) => {
@@ -147,15 +155,21 @@ class ProductView {
   }
 
   //============> Delete Products <=============
-  deleteProduct(e) {
-    const productId = e.target.dataset.id;
+  deleteProduct(e, btn) {
+    const productId = btn.dataset.id;
 
-    //-> Delete product
+    //-> Delete product on localStorage
     Storage.deleteProduct(productId);
+
+    //-> finds the closest ancestor element of the `btn` 
+    const productElement = btn.closest('.products-details');
+    //-> Remove the product element from the DOM 
+    productElement.remove();
 
     //-> Get remained products
     this.products = Storage.getAllProducts();
 
+    //-> rendering the updated list of products on the web page
     this.createProductsList(this.products);
 
     //-> Update product number
@@ -198,7 +212,7 @@ class ProductView {
   //=======> Update the number of Products <========
   updateProductNumber(e) {
     this.products = Storage.getAllProducts();
-    
+
     const count = this.products.length;
     numOfProducts.textContent = count;
   }
