@@ -80,7 +80,8 @@ class ProductView {
       /* optional chaining operator (?.): add a check to verify if the 'item' object exists and if the 'title' property is defined before accessing it. */
       result += `
       <div class="products-details flex items-center justify-between mb-8">
-        <span class="added-product text-slate-400 px-4">
+        <span class="added-product text-slate-400" 
+        style="margin-left: 3px; padding-right: 30px; padding-left: 3px;">
           ${item?.title}
         </span>
 
