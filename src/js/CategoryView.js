@@ -2,13 +2,17 @@
 import Storage from './Storage.js';
 
 //-> get title, description -> {} -> saveCategory -> ...
-const cTitle = document.querySelector('#category-title'),
-  cDescription = document.querySelector('#category-description'),
+const categoryTitle = document.querySelector('#category-title'),
+  categoryDescription = document.querySelector('#category-description'),
   addCategory = document.querySelector('#add-new-category'),
   cancelCategoryBtn = document.querySelector('#cancel-add-category');
 
+//===============================================
+
 const toggleCategoryBtn = document.getElementById('toggle-add-category'),
   categoryWrapper = document.querySelector('#category-wrapper');
+
+//===============================================
 
 class CategoryView {
   constructor() {
@@ -23,12 +27,18 @@ class CategoryView {
     this.categories = [];
   }
 
+  //============> Set Categories <=============
+  setApp() {
+    //-> in the initial load, put the categories we have in the App and categoryView
+    this.categories = Storage.getAllCategories();
+  }
+
   //===========> Add New Category <===========
   addNewCategory(e) {
     e.preventDefault();
 
-    const title = cTitle.value;
-    const description = cDescription.value;
+    const title = categoryTitle.value;
+    const description = categoryDescription.value;
 
     //-> Stop if title and desc was empty
     if (!title || !description) return;
@@ -43,23 +53,17 @@ class CategoryView {
     this.createCategoriesList();
 
     //-> empty inputs after each submit
-    cTitle.value = '';
-    cDescription.value = '';
+    categoryTitle.value = '';
+    categoryDescription.value = '';
 
-    //-> Add toggle event 
+    //-> Add toggle event
     categoryWrapper.classList.add('hidden');
     toggleCategoryBtn.classList.remove('hidden');
   }
 
-  //============> Set Categories <============= 
-  setApp() {
-    //-> in the initial load, put the categories we have in the App and categoryView
-    this.categories = Storage.getAllCategories();
-  }
-
-  //=====> Create category on product UI <======= 
+  //=====> Create category on product UI <=======
   createCategoriesList() {
-    //-> Set as default 
+    //-> Set as default
     let result = `
     <option class="bg-slate-500 text-slate-300" value="">
         Select a category
@@ -79,7 +83,7 @@ class CategoryView {
     categoryDOM.innerHTML = result;
   }
 
-  //============> Toggle Category <============= 
+  //============> Toggle Category <=============
   toggleCategory(e) {
     e.preventDefault();
 
@@ -87,8 +91,7 @@ class CategoryView {
     toggleCategoryBtn.classList.add('hidden');
   }
 
-
-  //============> Cancel Category <============= 
+  //============> Cancel Category <=============
   cancelCategory(e) {
     e.preventDefault();
 
@@ -97,6 +100,5 @@ class CategoryView {
   }
 }
 
-//-> export the new instance of CategoryView So if we used it elsewhere we don't need to make a new instance of CategoryView there 
+//-> export the new instance of CategoryView So if we used it elsewhere we don't need to make a new instance of CategoryView there
 export default new CategoryView();
-

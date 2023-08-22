@@ -15,7 +15,9 @@ class ProductView {
     );
 
     addNewProduct.addEventListener('click', (e) => this.addNewProduct(e));
+
     searchInput.addEventListener('input', (e) => this.searchProduct(e));
+
     sortInput.addEventListener('change', (e) => this.sortProducts(e));
 
     this.products = [];
@@ -192,6 +194,7 @@ class ProductView {
 
     input.contentEditable = true;
     input.focus();
+    
     const initialValue = input.innerText;
 
     input.addEventListener('blur', () => {
