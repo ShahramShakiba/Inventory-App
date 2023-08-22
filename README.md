@@ -27,7 +27,6 @@ As businesses grow, inventory apps can help them manage their inventory more eff
 https://github.com/ShahramShakiba/Inventory/assets/110089830/c74c954a-5a7e-4c07-9708-10267a300026
 
 
-## Try it live :
 
 
  ## Stay in touch :
