@@ -21,13 +21,7 @@ By having accurate inventory records, businesses can ensure that they have the p
 As businesses grow, inventory apps can help them manage their inventory more efficiently and effectively, allowing them to scale their operations.
 
 ### Video
-
-
-
 https://github.com/ShahramShakiba/Inventory/assets/110089830/c74c954a-5a7e-4c07-9708-10267a300026
-
-
-
 
  ## Stay in touch :
  • ` Telegram ` - <a href="https://t.me/ShahramDev">Shahram Shakiba</a> <br/>
