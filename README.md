@@ -6,7 +6,7 @@
   
  > Using if else statement - template literals - forEach - filter - find - spread operator - ternary operator - Classes - static method - DOM eventTarget - localStorage .
 
-- An _inventory-app_ is a software application designed to help businesses or individuals manage their inventory of products or goods. <br/>
+- An _inventory-app_ is a software application designed to help businesses or individuals manage their inventory of products or goods. <br/><br/>
 
 - **`Some benefits of using an inventory-app :`**<br/>
 **_1. Improved accuracy_ :**<br/>
