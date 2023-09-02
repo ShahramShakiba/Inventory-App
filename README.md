@@ -1,5 +1,5 @@
-# Description
-**_Inventory_** :<br/>
+# <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/></a> &nbsp; Inventory 
+**_Description_** :<br/>
   > This is a mini-project to create an inventory-app based on the concept of `OOP` to practice _HTML_, _CSS_, _JavaScript_ and _Tailwindcss_.  <br/>
   
   > In this project, the focus is on _categorizing_ existing products and adding, deleting and editing those products. <br/>
