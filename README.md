@@ -1,6 +1,6 @@
 # <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/></a> &nbsp;  <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/></a> &nbsp; Inventory Application
 **_Description_** :<br/>
-  > This is a practice-project to create an inventory-app based on the concept of `OOP` to practice _HTML_, _CSS_, _JavaScript_ and _Tailwindcss_.  <br/>
+  > This is a ` Practice-Project ` to create an inventory-app based on the concept of `OOP` to practice _HTML_, _CSS_, _JavaScript_ and _Tailwindcss_.  <br/>
   
   > In this project, the focus is on _categorizing_ existing products and adding, deleting and editing those products. <br/>
 
