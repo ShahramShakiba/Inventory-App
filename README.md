@@ -6,7 +6,7 @@
 
 - An _inventory-app_ is a software application designed to help businesses or individuals manage their inventory of products or goods. <br/><br/>
 
-
+ 
 ## Some benefits of using an inventory-app 
 **1. Improved accuracy :**<br/>
 An inventory app can help reduce human errors in data entry and tracking, leading to more accurate inventory records.<br/><br/>
