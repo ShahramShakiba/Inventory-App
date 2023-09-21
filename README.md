@@ -3,8 +3,6 @@
   > This is a practice-project to create an inventory-app based on the concept of `OOP` to practice _HTML_, _CSS_, _JavaScript_ and _Tailwindcss_.  <br/>
   
   > In this project, the focus is on _categorizing_ existing products and adding, deleting and editing those products. <br/>
-  
- > Using if else statement - template literals - forEach - filter - find - spread operator - ternary operator - Classes - static method - DOM eventTarget - localStorage .
 
 - An _inventory-app_ is a software application designed to help businesses or individuals manage their inventory of products or goods. <br/><br/>
 
