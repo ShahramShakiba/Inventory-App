@@ -10,13 +10,13 @@
 
 
 ## Some benefits of using an inventory-app :
-**_1. Improved accuracy_ :**<br/>
+**1. Improved accuracy :**<br/>
 An inventory app can help reduce human errors in data entry and tracking, leading to more accurate inventory records.<br/><br/>
-**_2. Cost savings_ :**<br/>
+**2. Cost savings :**<br/>
 By having a better understanding of their inventory levels, businesses can avoid overstocking or understocking, which can lead to cost savings.<br/><br/>
-**_3. Improved customer satisfaction_ :**<br/>
+**3. Improved customer satisfaction :**<br/>
 By having accurate inventory records, businesses can ensure that they have the products their customers want in stock, leading to higher customer satisfaction. <br/><br/>
-**_4. Scalability_ :**<br/>
+**4. Scalability :**<br/>
 As businesses grow, inventory apps can help them manage their inventory more efficiently and effectively, allowing them to scale their operations.
 
 ## Video
