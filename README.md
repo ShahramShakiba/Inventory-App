@@ -29,7 +29,7 @@ https://github.com/ShahramShakiba/Inventory/assets/110089830/c74c954a-5a7e-4c07-
  <a href="https://www.linkedin.com/in/shahramshakiba/" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
   </a> &nbsp;&nbsp;&nbsp;
-  <a href="https://t.me/ShahramDev" target="_blank">
+  <a href="https://t.me/ShahramShakibaa" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/telegram/default.svg" width="52" height="40" alt="telegram logo"  />
   </a> &nbsp;&nbsp;&nbsp;
   <a href="https://wa.me/message/LM2IMM3ABZ7ZM1" target="_blank">
@@ -38,7 +38,7 @@ https://github.com/ShahramShakiba/Inventory/assets/110089830/c74c954a-5a7e-4c07-
   <a href="https://instagram.com/shahram.shakibaa?igshid=MzNlNGNkZWQ4Mg==" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="52" height="40" alt="instagram logo"  />
   </a> &nbsp;&nbsp;&nbsp;
-  <a href="https://twitter.com/DevZEEMO" target="_blank">
+  <a href="https://twitter.com/ShahramShakibaa" target="_blank">
     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/twitter/default.svg" width="52" height="40" alt="twitter logo"  />
   </a>
 
