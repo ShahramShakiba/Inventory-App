@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "postcss ./src/css/main.css -o ./public/build/tailwind.css --watch"
+    "dev": "postcss ./src/css/main.css -o ./public/build/tailwind.css --watch",
+    "build": "npx tailwindcss -i src/css/main.css -o src/css/output.css"
   },
   "keywords": [],
   "author": "Shahram-Shakiba",
