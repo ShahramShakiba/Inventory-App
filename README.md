@@ -6,7 +6,7 @@
   
   > In this project, the focus is on _categorizing_ existing products and adding, deleting and editing those products. <br/>
 
-- An _inventory-app_ is a software application designed to help businesses or individuals manage their inventory of products or goods. <br/><br/>
+- An _inventory-app_ is a software application designed to help businesses or individuals manage their inventory of products or goods. <br/>
 
 
  
@@ -16,9 +16,9 @@ An inventory app can help reduce human errors in data entry and tracking, leadin
 **2. Cost savings :**<br/>
 By having a better understanding of their inventory levels, businesses can avoid overstocking or understocking, which can lead to cost savings.<br/><br/>
 **3. Improved customer satisfaction :**<br/>
-By having accurate inventory records, businesses can ensure that they have the products their customers want in stock, leading to higher customer satisfaction. <br/>
+By having accurate inventory records, businesses can ensure that they have the products their customers want in stock, leading to higher customer satisfaction. 
 
-<br/><br/>
+<br/>
 
 
 <!----------------------------------------- try it live ---------------------------------------->
