@@ -16,15 +16,14 @@ An inventory app can help reduce human errors in data entry and tracking, leadin
 **2. Cost savings :**<br/>
 By having a better understanding of their inventory levels, businesses can avoid overstocking or understocking, which can lead to cost savings.<br/><br/>
 **3. Improved customer satisfaction :**<br/>
-By having accurate inventory records, businesses can ensure that they have the products their customers want in stock, leading to higher customer satisfaction. <br/><br/>
-**4. Scalability :**<br/>
-As businesses grow, inventory apps can help them manage their inventory more efficiently and effectively, allowing them to scale their operations.
-<br/><br/><br/>
+By having accurate inventory records, businesses can ensure that they have the products their customers want in stock, leading to higher customer satisfaction. <br/>
+
+<br/><br/>
 
 
 <!----------------------------------------- try it live ---------------------------------------->
 ### Give It A Go In Real-Time and Give Me A Star <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Symbols/Dizzy.webp" alt="Dizzy" width="35" />
- <a href="https://shahramshakiba.github.io/HomeSmart-Landing-Page/" target="_blank">
+ <a href="https://shahramshakiba.github.io/Inventory-App/" target="_blank">
    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Light%20Bulb.webp" alt="Light Bulb" width="25" height="25" /> Inventory Application Demo
 </a> <br/><br/>
 
